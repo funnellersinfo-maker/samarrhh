@@ -11,7 +11,7 @@ import WhatsAppFloat from '@/components/samarrhh/WhatsAppFloat'
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-dark-premium text-white">
+    <div className="min-h-screen flex flex-col bg-dark-premium text-white overflow-x-hidden">
       <Navigation />
       <main className="flex-1">
         <HeroSection />

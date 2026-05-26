@@ -50,7 +50,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Main title */}
-        <motion.h1
+        <h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -59,7 +59,7 @@ export default function HeroSection() {
           <span className="block text-white">El Talento</span>
           <span className="block gradient-text-animated">Correcto</span>
           <span className="block text-white">Escala Imperios</span>
-        </motion.h1>
+        </h1>
 
         {/* 3D Core Node */}
         <div className="my-12 sm:my-16 lg:my-20">
@@ -86,6 +86,7 @@ export default function HeroSection() {
         >
           <a
             href="#cta"
+            aria-label="Conectar talento - Contactar a SAMA RR.HH"
             className="btn-shockwave group relative px-10 py-5 rounded-full bg-gradient-to-r from-cyber-blue to-cyber-blue/80 text-white font-bold tracking-wide text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(0,210,255,0.3)] min-w-[220px] sm:min-w-0"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
@@ -97,6 +98,7 @@ export default function HeroSection() {
           </a>
           <a
             href="#services"
+            aria-label="Auditar mi empresa - Ver servicios"
             className="btn-shockwave-purple group px-10 py-5 rounded-full border border-neon-purple/40 text-neon-purple font-bold tracking-wide text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:bg-neon-purple/10 hover:border-neon-purple/60 min-w-[220px] sm:min-w-0"
           >
             <span className="flex items-center justify-center gap-2">

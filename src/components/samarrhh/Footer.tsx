@@ -75,7 +75,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold text-white/60 tracking-wide uppercase mb-5">Contacto</h4>
             <div className="space-y-4">
               <a
-                href="https://wa.me/?text=Hola%20Samarrhh%2C%20quiero%20agendar%20una%20consultor%C3%ADa"
+                href="https://wa.me/528122062283?text=Hola%20Samarrhh%2C%20quiero%20agendar%20una%20consultor%C3%ADa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-white/30 hover:text-[#25D366] transition-colors duration-300"

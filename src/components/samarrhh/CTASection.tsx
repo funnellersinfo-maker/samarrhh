@@ -78,7 +78,7 @@ export default function CTASection() {
               className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8"
             >
               <a
-                href="https://wa.me/?text=Hola%20Samarrhh%2C%20quiero%20agendar%20una%20consultor%C3%ADa%20de%20diagn%C3%B3stico%20para%20mi%20empresa"
+                href="https://wa.me/528122062283?text=Hola%20Samarrhh%2C%20quiero%20agendar%20una%20consultor%C3%ADa%20de%20diagn%C3%B3stico%20para%20mi%20empresa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-shockwave group relative px-10 py-5 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-bold tracking-wide text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(37,211,102,0.3)] min-w-[240px] sm:min-w-0"

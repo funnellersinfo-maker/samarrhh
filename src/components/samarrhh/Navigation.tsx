@@ -66,6 +66,7 @@ export default function Navigation() {
             ))}
             <a
               href="#cta"
+              aria-label="Conectar talento - Contactar ahora"
               className="btn-shockwave px-6 py-3 rounded-full bg-gradient-to-r from-cyber-blue to-neon-purple text-white text-sm font-semibold tracking-wide transition-all duration-300 hover:scale-105"
             >
               Conectar Talento

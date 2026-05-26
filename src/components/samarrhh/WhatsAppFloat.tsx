@@ -45,7 +45,7 @@ export default function WhatsAppFloat() {
 
           {/* Button */}
           <a
-            href="https://wa.me/?text=Hola%20Samarrhh%2C%20quiero%20agendar%20una%20consultor%C3%ADa%20de%20diagn%C3%B3stico%20para%20mi%20empresa"
+            href="https://wa.me/528122062283?text=Hola%20Samarrhh%2C%20quiero%20agendar%20una%20consultor%C3%ADa%20de%20diagn%C3%B3stico%20para%20mi%20empresa"
             target="_blank"
             rel="noopener noreferrer"
             className="whatsapp-btn w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] flex items-center justify-center shadow-lg shadow-[#25D366]/20 hover:scale-110 hover:shadow-[#25D366]/40 transition-all duration-300"

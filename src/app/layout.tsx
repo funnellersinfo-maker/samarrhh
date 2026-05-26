@@ -7,12 +7,13 @@ const inter = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "SAMA RR.HH | El Futuro del Talento Humano",
-  description: "Consultora con 20+ años decodificando talento humano. Reclutamiento de precisión, psicometría avanzada y soluciones que escalan organizaciones.",
-  keywords: ["Samarrhh", "SAMA RR.HH", "Reclutamiento", "Selección", "Recursos Humanos", "Consultoría", "Psicometría", "Talento", "Bogotá", "Colombia"],
+  title: "SAMA RR.HH | Decodificamos Talento Humano con Precisión",
+  description: "Consultora con 20+ años decodificando talento humano. Reclutamiento de precisión, psicometría avanzada, administración de personal y soluciones que escalan organizaciones.",
+  keywords: ["Samarrhh", "SAMA RR.HH", "Reclutamiento", "Selección", "Recursos Humanos", "Consultoría", "Psicometría", "Talento", "México", "Monterrey"],
   authors: [{ name: "SAMA RR.HH - Antonio Santibañez" }],
   icons: {
     icon: [
@@ -26,10 +27,16 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "SAMA RR.HH | El Futuro del Talento Humano",
-    description: "No reclutamos personal. Decodificamos talento humano para construir equipos que no fallan.",
+    title: "SAMA RR.HH | Decodificamos Talento Humano con Precisión",
+    description: "No reclutamos personal. Decodificamos talento humano para construir equipos que no fallan. 20+ años de experiencia en reclutamiento, psicometría y gestión del talento.",
     type: "website",
-    locale: "es_CO",
+    locale: "es_MX",
+    url: "https://samarrhh.pages.dev",
+    siteName: "SAMA RR.HH",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
