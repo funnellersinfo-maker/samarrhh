@@ -31,7 +31,7 @@ export default function Navigation() {
           scrolled ? 'nav-glass py-3' : 'py-5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 flex items-center justify-center">
@@ -51,23 +51,23 @@ export default function Navigation() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm text-white/60 hover:text-cyber-blue transition-colors duration-300 tracking-wide uppercase font-medium"
+                className="text-sm text-white/60 hover:text-cyber-blue transition-colors duration-300 tracking-wide uppercase font-medium py-2"
               >
                 {item.label}
               </a>
             ))}
             <a
               href="#cta"
-              className="btn-shockwave px-5 py-2.5 rounded-full bg-gradient-to-r from-cyber-blue to-neon-purple text-white text-sm font-semibold tracking-wide transition-all duration-300 hover:scale-105"
+              className="btn-shockwave px-6 py-3 rounded-full bg-gradient-to-r from-cyber-blue to-neon-purple text-white text-sm font-semibold tracking-wide transition-all duration-300 hover:scale-105"
             >
               Conectar Talento
             </a>
           </div>
 
           {/* Mobile Hamburger */}
-          <button
+            <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center gap-1.5"
+            className="md:hidden relative w-10 h-10 flex flex-col justify-center items-center gap-1.5 p-2"
             aria-label="Toggle menu"
           >
             <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
@@ -85,7 +85,7 @@ export default function Navigation() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-dark-premium/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-dark-premium/95 backdrop-blur-xl flex flex-col items-center justify-center gap-10"
           >
             {navItems.map((item, i) => (
               <motion.a
@@ -95,7 +95,7 @@ export default function Navigation() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="text-2xl font-bold text-white/80 hover:text-cyber-blue transition-colors tracking-wide uppercase"
+                className="text-2xl font-bold text-white/80 hover:text-cyber-blue transition-colors tracking-wide uppercase py-2"
               >
                 {item.label}
               </motion.a>
@@ -106,7 +106,7 @@ export default function Navigation() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="btn-shockwave mt-4 px-8 py-3 rounded-full bg-gradient-to-r from-cyber-blue to-neon-purple text-white font-semibold tracking-wide"
+              className="btn-shockwave mt-6 px-10 py-4 rounded-full bg-gradient-to-r from-cyber-blue to-neon-purple text-white font-semibold tracking-wide text-lg"
             >
               Conectar Talento
             </motion.a>

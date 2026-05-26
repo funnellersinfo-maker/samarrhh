@@ -16,9 +16,9 @@ export default function Footer() {
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16"
+        className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-14 sm:py-20"
       >
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
@@ -37,8 +37,8 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="text-sm font-semibold text-white/60 tracking-wide uppercase mb-4">Navegación</h4>
-            <ul className="space-y-2">
+            <h4 className="text-sm font-semibold text-white/60 tracking-wide uppercase mb-5">Navegación</h4>
+            <ul className="space-y-3">
               {['Inicio', 'El Problema', 'Solución', 'Servicios', 'Contacto'].map((item) => (
                 <li key={item}>
                   <a href={`#${item === 'El Problema' ? 'pain' : item === 'Inicio' ? 'hero' : item.toLowerCase()}`} className="text-sm text-white/30 hover:text-cyber-blue transition-colors duration-300">
@@ -51,8 +51,8 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-semibold text-white/60 tracking-wide uppercase mb-4">Servicios</h4>
-            <ul className="space-y-2">
+            <h4 className="text-sm font-semibold text-white/60 tracking-wide uppercase mb-5">Servicios</h4>
+            <ul className="space-y-3">
               {['Reclutamiento y Selección', 'Administración de Personal', 'Inplant RR.HH', 'Psicometría', 'Estudio Socioeconómico', 'Toxicológicos y Poligrafía'].map((item) => (
                 <li key={item}>
                   <a href="#services" className="text-sm text-white/30 hover:text-neon-purple transition-colors duration-300">
@@ -65,8 +65,8 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-semibold text-white/60 tracking-wide uppercase mb-4">Contacto</h4>
-            <div className="space-y-3">
+            <h4 className="text-sm font-semibold text-white/60 tracking-wide uppercase mb-5">Contacto</h4>
+            <div className="space-y-4">
               <a
                 href="https://wa.me/?text=Hola%20Samarrhh%2C%20quiero%20agendar%20una%20consultor%C3%ADa"
                 target="_blank"
@@ -92,7 +92,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-14 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/20">
             © {new Date().getFullYear()} SAMA RR.HH. Todos los derechos reservados.
           </p>

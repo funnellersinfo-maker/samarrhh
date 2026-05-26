@@ -27,7 +27,7 @@ export default function WhatsAppFloat() {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0, opacity: 0 }}
           transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-3"
+          className="fixed bottom-8 right-6 sm:right-8 z-50 flex items-center gap-4"
         >
           {/* Tooltip */}
           <AnimatePresence>

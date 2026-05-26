@@ -32,7 +32,7 @@ export default function SolutionSection() {
     <section
       id="solution"
       ref={ref}
-      className="relative py-24 sm:py-32 bg-dark-premium overflow-hidden"
+      className="relative py-28 sm:py-40 bg-dark-premium overflow-hidden"
     >
       {/* Background effects */}
       <div className="absolute inset-0 radial-glow-blue" />
@@ -46,13 +46,13 @@ export default function SolutionSection() {
         className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyber-blue/50 to-transparent"
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16 sm:mb-20"
+          className="text-center mb-20 sm:mb-28"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyber-blue/20 bg-cyber-blue/5 text-cyber-blue text-xs sm:text-sm tracking-widest uppercase font-medium mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-cyber-blue glow-pulse" />
@@ -66,7 +66,7 @@ export default function SolutionSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="max-w-2xl mx-auto mt-6 text-base sm:text-lg text-white/40 leading-relaxed"
+            className="max-w-2xl mx-auto mt-8 text-base sm:text-lg text-white/40 leading-relaxed"
           >
             Somos un laboratorio de talento humano. 20+ años decodificando el ADN
             de las organizaciones que dominan sus mercados.
@@ -74,16 +74,16 @@ export default function SolutionSection() {
         </motion.div>
 
         {/* Solutions */}
-        <div className="space-y-8 sm:space-y-12">
+        <div className="space-y-10 sm:space-y-16">
           {solutions.map((solution, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40, filter: 'blur(10px)' }}
               animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
               transition={{ duration: 0.8, delay: 0.3 + i * 0.2 }}
-              className="glass-card group rounded-2xl p-6 sm:p-8 lg:p-10 transition-all duration-500"
+              className="glass-card group rounded-2xl p-7 sm:p-10 lg:p-12 transition-all duration-500"
             >
-              <div className="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-10">
+              <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
                 {/* Number */}
                 <div className={`text-6xl sm:text-7xl lg:text-8xl font-black bg-gradient-to-br ${solution.gradient} bg-clip-text text-transparent opacity-30 group-hover:opacity-60 transition-opacity duration-500 leading-none`}>
                   {solution.number}
@@ -91,7 +91,7 @@ export default function SolutionSection() {
 
                 {/* Content */}
                 <div className="flex-1">
-                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:text-cyber-blue transition-colors duration-500">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-cyber-blue transition-colors duration-500">
                     {solution.title}
                   </h3>
                   <p className="text-base sm:text-lg text-white/40 leading-relaxed group-hover:text-white/60 transition-colors duration-500">
@@ -115,7 +115,7 @@ export default function SolutionSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
-          className="mt-16 sm:mt-20 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center"
+          className="mt-20 sm:mt-28 grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 text-center"
         >
           {[
             { value: '20+', label: 'Años de Experiencia' },
@@ -124,7 +124,7 @@ export default function SolutionSection() {
             { value: '<72h', label: 'Tiempo de Diagnóstico' },
           ].map((stat, i) => (
             <div key={i} className="group">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-black gradient-text-static mb-1">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-black gradient-text-static mb-2">
                 {stat.value}
               </div>
               <div className="text-xs sm:text-sm text-white/30 group-hover:text-white/50 transition-colors">

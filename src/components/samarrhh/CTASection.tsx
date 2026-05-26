@@ -11,7 +11,7 @@ export default function CTASection() {
     <section
       id="cta"
       ref={ref}
-      className="relative py-24 sm:py-32 bg-dark-premium overflow-hidden"
+      className="relative py-28 sm:py-40 bg-dark-premium overflow-hidden"
     >
       {/* Background effects */}
       <div className="absolute inset-0 radial-glow-blue" />
@@ -26,12 +26,12 @@ export default function CTASection() {
         className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyber-blue/50 to-transparent"
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 40, scale: 0.98 }}
           animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
           transition={{ duration: 0.8 }}
-          className="glass-card rounded-3xl p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden"
+          className="glass-card rounded-3xl p-10 sm:p-14 lg:p-20 text-center relative overflow-hidden"
         >
           {/* Inner glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-blue/5 via-transparent to-neon-purple/5 pointer-events-none" />
@@ -46,14 +46,14 @@ export default function CTASection() {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.3 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyber-blue/20 bg-cyber-blue/5 text-cyber-blue text-xs sm:text-sm tracking-widest uppercase font-medium mb-8"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyber-blue/20 bg-cyber-blue/5 text-cyber-blue text-xs sm:text-sm tracking-widest uppercase font-medium mb-10"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-cyber-blue glow-pulse" />
               Consultoría de Diagnóstico Gratuita
             </motion.span>
 
             {/* Title */}
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-6">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter leading-[0.9] mb-8">
               <span className="block text-white">Tu Empresa</span>
               <span className="block gradient-text-animated">Merece Mejor</span>
               <span className="block text-white">Talento</span>
@@ -64,7 +64,7 @@ export default function CTASection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="max-w-2xl mx-auto text-base sm:text-lg text-white/40 leading-relaxed mb-10"
+              className="max-w-2xl mx-auto text-base sm:text-lg text-white/40 leading-relaxed mb-14"
             >
               Agenda una sesión de diagnóstico de 30 minutos. Sin compromiso, sin costos ocultos.
               Solo talento decodificado para tu operación.
@@ -75,13 +75,13 @@ export default function CTASection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+              className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8"
             >
               <a
                 href="https://wa.me/?text=Hola%20Samarrhh%2C%20quiero%20agendar%20una%20consultor%C3%ADa%20de%20diagn%C3%B3stico%20para%20mi%20empresa"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-shockwave group relative px-8 py-4 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-bold tracking-wide text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(37,211,102,0.3)]"
+                className="btn-shockwave group relative px-10 py-5 rounded-full bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-bold tracking-wide text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(37,211,102,0.3)] min-w-[240px] sm:min-w-0"
               >
                 <span className="relative z-10 flex items-center gap-2">
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -92,7 +92,7 @@ export default function CTASection() {
               </a>
               <a
                 href="mailto:contacto@samarrhh.com"
-                className="btn-shockwave-purple group px-8 py-4 rounded-full border border-neon-purple/40 text-neon-purple font-bold tracking-wide text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:bg-neon-purple/10 hover:border-neon-purple/60"
+                className="btn-shockwave-purple group px-10 py-5 rounded-full border border-neon-purple/40 text-neon-purple font-bold tracking-wide text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:bg-neon-purple/10 hover:border-neon-purple/60 min-w-[240px] sm:min-w-0"
               >
                 <span className="flex items-center gap-2">
                   Enviar Email Directo
@@ -108,7 +108,7 @@ export default function CTASection() {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 1 }}
-              className="mt-8 text-xs text-white/20 tracking-wide"
+              className="mt-12 text-xs text-white/20 tracking-wide"
             >
               Respuesta garantizada en menos de 24 horas · 20+ años de experiencia · CEO: Antonio Santibañez
             </motion.p>

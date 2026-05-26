@@ -48,7 +48,7 @@ export default function PainSection() {
     <section
       id="pain"
       ref={ref}
-      className="relative py-24 sm:py-32 bg-dark-premium overflow-hidden"
+      className="relative py-28 sm:py-40 bg-dark-premium overflow-hidden"
     >
       {/* Background effects */}
       <div className="absolute inset-0 radial-glow-red" />
@@ -62,13 +62,13 @@ export default function PainSection() {
         className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent"
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16 sm:mb-20"
+          className="text-center mb-20 sm:mb-28"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-red-500/20 bg-red-500/5 text-red-400 text-xs sm:text-sm tracking-widest uppercase font-medium mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-red-500 glow-pulse" />
@@ -83,7 +83,7 @@ export default function PainSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="max-w-2xl mx-auto mt-6 text-base sm:text-lg text-white/40 leading-relaxed"
+            className="max-w-2xl mx-auto mt-8 text-base sm:text-lg text-white/40 leading-relaxed"
           >
             Cada mala contratación no es un error, es una hemorragia financiera silenciosa.
             En 2026, las empresas que no decodifiquen su talento están donando dinero a la competencia.
@@ -91,17 +91,17 @@ export default function PainSection() {
         </motion.div>
 
         {/* Stats grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {painStats.map((stat, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30, scale: 0.95 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="glass-card group rounded-2xl p-6 sm:p-8 text-center transition-all duration-500 hover:border-red-500/20 hover:shadow-[0_0_40px_rgba(220,38,38,0.08)]"
+              className="glass-card group rounded-2xl p-7 sm:p-10 text-center transition-all duration-500 hover:border-red-500/20 hover:shadow-[0_0_40px_rgba(220,38,38,0.08)]"
             >
-              <div className="text-3xl mb-4">{stat.icon}</div>
-              <div className="text-4xl sm:text-5xl font-black text-red-400 mb-3">
+              <div className="text-3xl mb-5">{stat.icon}</div>
+              <div className="text-4xl sm:text-5xl font-black text-red-400 mb-4">
                 <AnimatedCounter target={stat.value} suffix={stat.suffix} />
               </div>
               <p className="text-sm sm:text-base text-white/40 leading-relaxed">{stat.label}</p>
@@ -114,12 +114,12 @@ export default function PainSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 sm:mt-20 text-center"
+          className="mt-20 sm:mt-28 text-center"
         >
           <div className="inline-block max-w-3xl">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-red-500/5 via-transparent to-red-500/5 rounded-2xl" />
-              <div className="relative glass-card rounded-2xl p-8 sm:p-10 border-red-500/10">
+              <div className="relative glass-card rounded-2xl p-10 sm:p-14 border-red-500/10">
                 <p className="text-lg sm:text-xl md:text-2xl text-white/60 font-light leading-relaxed">
                   &ldquo;Contratar sin estrategia de talento es como operar con los ojos cerrados.
                   <span className="text-red-400 font-semibold">Estás perdiendo sangre</span> y ni siquiera lo sabes.&rdquo;

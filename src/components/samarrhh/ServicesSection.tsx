@@ -80,7 +80,7 @@ export default function ServicesSection() {
     <section
       id="services"
       ref={ref}
-      className="relative py-24 sm:py-32 bg-dark-premium overflow-hidden"
+      className="relative py-28 sm:py-40 bg-dark-premium overflow-hidden"
     >
       {/* Background effects */}
       <div className="absolute inset-0 radial-glow-purple" />
@@ -94,13 +94,13 @@ export default function ServicesSection() {
         className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-purple/50 to-transparent"
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16 sm:mb-20"
+          className="text-center mb-20 sm:mb-28"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-neon-purple/20 bg-neon-purple/5 text-neon-purple text-xs sm:text-sm tracking-widest uppercase font-medium mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-neon-purple glow-pulse" />
@@ -114,7 +114,7 @@ export default function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="max-w-2xl mx-auto mt-6 text-base sm:text-lg text-white/40 leading-relaxed"
+            className="max-w-2xl mx-auto mt-8 text-base sm:text-lg text-white/40 leading-relaxed"
           >
             Cada servicio es un módulo de precisión diseñado para eliminar la incertidumbre
             en la gestión de tu capital humano.
@@ -122,19 +122,19 @@ export default function ServicesSection() {
         </motion.div>
 
         {/* Services grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30, filter: 'blur(8px)', scale: 0.97 }}
               animate={isInView ? { opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-              className={`glass-card group rounded-2xl p-6 sm:p-8 transition-all duration-500 hover:shadow-[0_0_40px_rgba(${
+              className={`glass-card group rounded-2xl p-7 sm:p-10 transition-all duration-500 hover:shadow-[0_0_40px_rgba(${
                 service.accent === 'cyber-blue' ? '0,210,255' : '157,78,221'
               },0.08)]`}
             >
               {/* Tag */}
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-7">
                 <span className={`text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full border ${
                   service.accent === 'cyber-blue'
                     ? 'text-cyber-blue border-cyber-blue/20 bg-cyber-blue/5'
@@ -150,7 +150,7 @@ export default function ServicesSection() {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-white/90 transition-colors duration-300">
+              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 group-hover:text-white/90 transition-colors duration-300">
                 {service.title}
               </h3>
 
@@ -160,7 +160,7 @@ export default function ServicesSection() {
               </p>
 
               {/* Bottom accent line */}
-              <div className={`mt-6 h-px bg-gradient-to-r ${
+              <div className={`mt-8 h-px bg-gradient-to-r ${
                 service.accent === 'cyber-blue'
                   ? 'from-cyber-blue/0 via-cyber-blue/0 group-hover:via-cyber-blue/40 to-cyber-blue/0'
                   : 'from-neon-purple/0 via-neon-purple/0 group-hover:via-neon-purple/40 to-neon-purple/0'
