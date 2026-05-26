@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Image from 'next/image'
 
 export default function Footer() {
   const ref = useRef<HTMLElement>(null)
@@ -22,9 +23,15 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="relative w-10 h-10 flex items-center justify-center">
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-cyber-blue/20 to-neon-purple/20" />
-                <span className="relative text-lg font-bold gradient-text-static">S</span>
+              <div className="relative w-10 h-10 flex items-center justify-center overflow-hidden rounded-full">
+                <Image
+                  src="/favicon-source.png"
+                  alt="SAMA RR.HH"
+                  width={40}
+                  height={40}
+                  className="object-contain"
+                  priority
+                />
               </div>
               <span className="text-lg font-bold tracking-wider">
                 SAMA<span className="gradient-text-static">RR.HH</span>
@@ -91,11 +98,20 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
+        {/* Bottom bar with logo */}
         <div className="mt-14 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/20">
-            © {new Date().getFullYear()} SAMA RR.HH. Todos los derechos reservados.
-          </p>
+          <div className="flex items-center gap-3">
+            <Image
+              src="/favicon-source.png"
+              alt="SAMA RR.HH"
+              width={24}
+              height={24}
+              className="object-contain opacity-50"
+            />
+            <p className="text-xs text-white/20">
+              © {new Date().getFullYear()} SAMA RR.HH. Todos los derechos reservados.
+            </p>
+          </div>
           <p className="text-xs text-white/20">
             CEO: Antonio Santibañez · 20+ años transformando organizaciones
           </p>

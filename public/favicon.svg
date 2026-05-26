@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="outerRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5B9BD5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E75B6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="innerShape" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6BAED6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3A8CC2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Outer circle ring -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="url(#outerRing)" stroke-width="48"/>
+  <!-- Abstract inner shape - stylized "S" or flowing curve representing HR connection -->
+  <path d="M 256 80 
+           C 380 80, 432 180, 432 256 
+           C 432 332, 380 432, 256 432 
+           C 180 432, 130 380, 130 320 
+           C 130 260, 180 220, 256 220 
+           C 332 220, 382 180, 382 130 
+           C 382 100, 340 80, 256 80 Z" 
+        fill="url(#innerShape)" opacity="0.85"/>
+  <!-- Center void / negative space -->
+  <circle cx="256" cy="280" r="60" fill="#0a0a0c" opacity="0.9"/>
+</svg>

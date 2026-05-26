@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
 const navItems = [
   { label: 'Inicio', href: '#hero' },
@@ -34,9 +35,16 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 flex items-center justify-center">
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-cyber-blue/20 to-neon-purple/20 group-hover:from-cyber-blue/40 group-hover:to-neon-purple/40 transition-all duration-500" />
-              <span className="relative text-lg font-bold gradient-text-static">S</span>
+            <div className="relative w-10 h-10 flex items-center justify-center overflow-hidden rounded-full">
+              <Image
+                src="/favicon-source.png"
+                alt="SAMA RR.HH"
+                width={40}
+                height={40}
+                className="object-contain group-hover:scale-110 transition-transform duration-300"
+                priority
+              />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyber-blue/0 to-neon-purple/0 group-hover:from-cyber-blue/20 group-hover:to-neon-purple/20 transition-all duration-500" />
             </div>
             <div className="hidden sm:block">
               <span className="text-lg font-bold tracking-wider">
@@ -65,7 +73,7 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Hamburger */}
-            <button
+          <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="md:hidden relative w-10 h-10 flex flex-col justify-center items-center gap-1.5 p-2"
             aria-label="Toggle menu"
@@ -87,6 +95,17 @@ export default function Navigation() {
             transition={{ duration: 0.3 }}
             className="fixed inset-0 z-40 bg-dark-premium/95 backdrop-blur-xl flex flex-col items-center justify-center gap-10"
           >
+            {/* Mobile menu logo */}
+            <div className="mb-4">
+              <Image
+                src="/logo-sm.png"
+                alt="SAMA RR.HH"
+                width={200}
+                height={70}
+                className="object-contain opacity-80"
+                priority
+              />
+            </div>
             {navItems.map((item, i) => (
               <motion.a
                 key={item.href}
