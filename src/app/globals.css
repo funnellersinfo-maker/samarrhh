@@ -319,3 +319,15 @@ html {
   background: rgba(0, 210, 255, 0.3);
   color: #fff;
 }
+
+/* Audio visualizer bars */
+@keyframes audioBar {
+  0% { height: 3px; }
+  100% { height: 14px; }
+}
+
+/* Fade in animation for audio hint */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

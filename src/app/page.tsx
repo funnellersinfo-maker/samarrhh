@@ -8,6 +8,7 @@ import ServicesSection from '@/components/samarrhh/ServicesSection'
 import CTASection from '@/components/samarrhh/CTASection'
 import Footer from '@/components/samarrhh/Footer'
 import WhatsAppFloat from '@/components/samarrhh/WhatsAppFloat'
+import BackgroundAudio from '@/components/samarrhh/BackgroundAudio'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppFloat />
+      <BackgroundAudio />
     </div>
   )
 }
