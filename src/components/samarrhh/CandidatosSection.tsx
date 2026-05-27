@@ -1,221 +1,140 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { Search, FileText, Briefcase, UserCheck, ArrowRight, Star } from 'lucide-react'
 
-const benefits = [
+const steps = [
   {
-    title: 'Vacantes Exclusivas',
-    description:
-      'Acceso a oportunidades en empresas líderes que no publican en portales tradicionales.',
-    accent: 'cyber-blue',
-    icon: (
-      <svg
-        className="w-7 h-7"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={1.5}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 00.75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 00-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0112 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 01-.673-.38m0 0A2.18 2.18 0 013 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 013.413-.387m7.5 0V5.25A2.25 2.25 0 0013.5 3h-3a2.25 2.25 0 00-2.25 2.25v.894m7.5 0a48.667 48.667 0 00-7.5 0M12 12.75h.008v.008H12v-.008z"
-        />
-      </svg>
-    ),
+    icon: Search,
+    title: 'Explora oportunidades',
+    description: 'Navega nuestras vacantes disponibles y encuentra la posición ideal para tu perfil profesional.',
   },
   {
-    title: 'Acompañamiento Personalizado',
-    description:
-      'Te preparamos para cada entrevista y te damos feedback real de los procesos.',
-    accent: 'neon-purple',
-    icon: (
-      <svg
-        className="w-7 h-7"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={1.5}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"
-        />
-      </svg>
-    ),
+    icon: FileText,
+    title: 'Registra tu CV',
+    description: 'Completa tu perfil y adjunta tu currículum. Nuestro equipo lo evaluará para matching con vacantes.',
   },
   {
-    title: 'Crecimiento Real',
-    description:
-      'Nuestras empresas ofrecen planes de carrera, no solo empleos temporales.',
-    accent: 'cyber-blue',
-    icon: (
-      <svg
-        className="w-7 h-7"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        strokeWidth={1.5}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"
-        />
-      </svg>
-    ),
+    icon: Briefcase,
+    title: 'Proceso de selección',
+    description: 'Si tu perfil coincide, serás contactado para iniciar el proceso de evaluación y entrevistas.',
+  },
+  {
+    icon: UserCheck,
+    title: 'Consigue tu empleo',
+    description: 'Supera las etapas de selección y recibe una oferta laboral en una empresa de primer nivel.',
   },
 ]
 
 export default function CandidatosSection() {
-  const ref = useRef<HTMLElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const sectionRef = useRef<HTMLElement>(null)
+  const [isVisible, setIsVisible] = useState(false)
 
-  const whatsappCVUrl =
-    'https://wa.me/528122062283?text=Hola%20SAMA%20RR.HH%2C%20quiero%20enviar%20mi%20CV%20y%20postularme%20a%20vacantes'
-
-  const emailUrl =
-    'mailto:ventas3@samarrhh.site?subject=Env%C3%ADo%20de%20CV'
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+        }
+      },
+      { threshold: 0.1 }
+    )
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <section
-      id="candidatos"
-      ref={ref}
-      className="relative py-28 sm:py-40 bg-dark-premium overflow-hidden"
-    >
-      {/* Background effects */}
-      <div className="absolute inset-0 radial-glow-blue" />
-      <div className="absolute inset-0 grid-pattern opacity-30" />
+    <section id="candidatos" ref={sectionRef} className="py-20 bg-corporate-blue relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }} />
+      </div>
 
-      {/* Top accent line */}
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={isInView ? { scaleX: 1 } : {}}
-        transition={{ duration: 1.5, ease: 'easeOut' }}
-        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyber-blue/50 to-transparent"
-      />
-
-      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-        {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-20 sm:mb-28"
-        >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyber-blue/20 bg-cyber-blue/5 text-cyber-blue text-xs sm:text-sm tracking-widest uppercase font-medium mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyber-blue glow-pulse" />
-            Para Talento
-          </span>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.9]">
-            <span className="block text-white">Tu Próxima Gran</span>
-            <span className="block gradient-text-animated">Oportunidad Está Aquí</span>
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className={`text-center max-w-3xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <span className="text-sm font-semibold text-blue-300 uppercase tracking-wider">Para Candidatos</span>
+          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">
+            Encuentra el empleo que mereces
           </h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="max-w-2xl mx-auto mt-8 text-base sm:text-lg text-white/40 leading-relaxed"
-          >
-            Conectamos tu talento con las empresas que lo valoran. Envía tu CV y
-            accede a vacantes exclusivas que no encontrarás en portales públicos.
-          </motion.p>
-        </motion.div>
-
-        {/* Benefit cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
-          {benefits.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30, filter: 'blur(8px)', scale: 0.97 }}
-              animate={
-                isInView
-                  ? { opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }
-                  : {}
-              }
-              transition={{ duration: 0.6, delay: 0.15 + i * 0.12 }}
-              className={`glass-card group rounded-2xl p-7 sm:p-10 text-center transition-all duration-500 hover:shadow-[0_0_40px_rgba(${
-                item.accent === 'cyber-blue' ? '0,210,255' : '157,78,221'
-              },0.1)]`}
-            >
-              {/* Icon */}
-              <div
-                className={`mx-auto mb-6 inline-flex items-center justify-center w-14 h-14 rounded-xl border transition-colors duration-500 ${
-                  item.accent === 'cyber-blue'
-                    ? 'text-cyber-blue border-cyber-blue/20 bg-cyber-blue/5 group-hover:bg-cyber-blue/10 group-hover:border-cyber-blue/40'
-                    : 'text-neon-purple border-neon-purple/20 bg-neon-purple/5 group-hover:bg-neon-purple/10 group-hover:border-neon-purple/40'
-                }`}
-              >
-                {item.icon}
-              </div>
-
-              {/* Title */}
-              <h3 className="text-lg sm:text-xl font-bold text-white mb-4 transition-colors duration-300">
-                {item.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm sm:text-base text-white/35 leading-relaxed group-hover:text-white/55 transition-colors duration-500">
-                {item.description}
-              </p>
-
-              {/* Bottom accent line */}
-              <div
-                className={`mt-8 h-px bg-gradient-to-r ${
-                  item.accent === 'cyber-blue'
-                    ? 'from-cyber-blue/0 via-cyber-blue/0 group-hover:via-cyber-blue/40 to-cyber-blue/0'
-                    : 'from-neon-purple/0 via-neon-purple/0 group-hover:via-neon-purple/40 to-neon-purple/0'
-                } transition-all duration-500`}
-              />
-            </motion.div>
-          ))}
+          <div className="w-16 h-1 bg-blue-400 mx-auto mt-4 rounded-full" />
+          <p className="mt-6 text-lg text-blue-100">
+            Miles de vacantes en las mejores empresas de México. Registra tu currículum 
+            y deja que nosotros encontremos la oportunidad perfecta para ti.
+          </p>
         </div>
 
-        {/* CTA buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8"
-        >
-          {/* Primary CTA — WhatsApp */}
-          <a
-            href={whatsappCVUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Enviar mi CV por WhatsApp"
-            className="btn-shockwave group relative flex items-center justify-center gap-3 px-10 py-5 rounded-xl bg-gradient-to-r from-[#25D366] to-[#25D366]/80 text-white font-bold tracking-wide text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(37,211,102,0.3)] min-w-[260px] sm:min-w-0"
-          >
-            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-            </svg>
-            <span className="relative z-10">Enviar mi CV por WhatsApp</span>
-          </a>
+        {/* Steps */}
+        <div className={`mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          {steps.map((step, i) => {
+            const Icon = step.icon
+            return (
+              <div key={i} className="relative text-center">
+                {/* Connector line */}
+                {i < steps.length - 1 && (
+                  <div className="hidden lg:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-blue-400/30" />
+                )}
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon className="w-7 h-7 text-blue-300" />
+                  </div>
+                  <div className="text-xs text-blue-300 font-semibold mb-2">Paso {i + 1}</div>
+                  <h3 className="text-lg font-bold text-white">{step.title}</h3>
+                  <p className="mt-2 text-sm text-blue-100 leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
 
-          {/* Secondary CTA — Email */}
-          <a
-            href={emailUrl}
-            aria-label="Enviar CV por correo electrónico"
-            className="group flex items-center justify-center gap-3 px-10 py-5 rounded-xl border border-white/10 text-white/60 font-bold tracking-wide text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:border-cyber-blue/30 hover:text-white hover:bg-white/5 min-w-[260px] sm:min-w-0"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={1.5}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-              />
-            </svg>
-            Enviar por Email
-          </a>
-        </motion.div>
+        {/* Image and CTA */}
+        <div className={`mt-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-all duration-700 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
+            <img
+              src="/images/candidatos.png"
+              alt="Candidatos SAMA RR.HH"
+              className="w-full h-[350px] object-cover"
+            />
+          </div>
+          <div>
+            <div className="flex items-center gap-2 mb-4">
+              <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+              <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+              <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+              <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+              <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white">
+              Tu próximo gran paso profesional empieza aquí
+            </h3>
+            <p className="mt-4 text-blue-100 leading-relaxed">
+              Miles de candidatos han encontrado su empleo ideal a través de SAMA RR.HH. 
+              Nuestro equipo de reclutadores trabaja activamente para conectar tu talento 
+              con las mejores oportunidades del mercado.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://wa.me/528122062283?text=Hola,%20me%20gustaría%20registrar%20mi%20CV%20con%20SAMA%20RR.HH."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-white text-corporate-blue px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors group"
+              >
+                Envía tu CV por WhatsApp
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a
+                href="mailto:contacto@samarrhh.com?subject=Registro%20de%20CV"
+                className="inline-flex items-center justify-center gap-2 bg-transparent text-white border-2 border-white/40 px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors"
+              >
+                <FileText className="w-5 h-5" />
+                Enviar por email
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

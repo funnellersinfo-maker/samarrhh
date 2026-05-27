@@ -11,10 +11,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SAMA RR.HH | Decodificamos Talento Humano con Precisión",
-  description: "Consultora con 20+ años decodificando talento humano. Reclutamiento de precisión, psicometría avanzada, administración de personal y soluciones que escalan organizaciones.",
-  keywords: ["Samarrhh", "SAMA RR.HH", "Reclutamiento", "Selección", "Recursos Humanos", "Consultoría", "Psicometría", "Talento", "México", "Monterrey"],
-  authors: [{ name: "SAMA RR.HH - Antonio Santibañez" }],
+  title: "SAMA RR.HH | Soluciones Integrales en Recursos Humanos",
+  description: "Consultora con 20+ años de experiencia en reclutamiento, selección, administración de personal, psicometría y consultoría organizacional. Transformamos tu capital humano en ventaja competitiva.",
+  keywords: ["SAMA RRHH", "Reclutamiento", "Selección", "Recursos Humanos", "Consultoría", "Psicometría", "Administración de Personal", "Inplant", "Talento", "México", "Monterrey"],
+  authors: [{ name: "SAMA RR.HH" }],
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "SAMA RR.HH | Decodificamos Talento Humano con Precisión",
-    description: "No reclutamos personal. Decodificamos talento humano para construir equipos que no fallan. 20+ años de experiencia en reclutamiento, psicometría y gestión del talento.",
+    title: "SAMA RR.HH | Soluciones Integrales en Recursos Humanos",
+    description: "Más de 20 años transformando organizaciones a través de soluciones estratégicas en capital humano.",
     type: "website",
     locale: "es_MX",
     url: "https://samarrhh.pages.dev",
@@ -48,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body
-        className={`${inter.variable} antialiased bg-[#0a0a0c] text-white`}
+        className={`${inter.variable} antialiased bg-white text-slate-800`}
       >
         {children}
         <Toaster />
